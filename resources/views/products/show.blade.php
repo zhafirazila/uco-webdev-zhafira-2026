@@ -6,9 +6,9 @@
     Variabel:
     - $product (array): data produk yang akan ditampilkan
 --}}
-<x-template title="Detail Produk">
+<x-template title="Detail Product">
 
-    <h2>Detail Produk</h2>
+    <h2>Detail Product</h2>
 
     {{-- Card Bootstrap untuk menampilkan detail produk --}}
     <div class="card mt-3">
@@ -21,7 +21,7 @@
 
             {{-- Harga produk dengan format Rupiah --}}
             <p class="card-text">
-                <strong>Harga:</strong> Rp {{ number_format($product['price'], 0, ',', '.') }}
+                <strong>Price:</strong> Rp {{ number_format($product['price'], 0, ',', '.') }}
             </p>
 
             {{-- Tombol Edit mengarah ke route products.edit --}}
@@ -29,7 +29,7 @@
                class="btn btn-warning">Edit</a>
 
             {{-- Tombol Kembali mengarah ke halaman daftar produk --}}
-            <a href="{{ route('products') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('products') }}" class="btn btn-secondary">Back</a>
         </div>
     </div>
 

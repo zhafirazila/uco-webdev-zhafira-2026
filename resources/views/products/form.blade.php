@@ -9,9 +9,9 @@
 --}}
 
 {{-- Judul halaman menyesuaikan mode menggunakan binding atribut Blade component --}}
-<x-template :title="$mode === 'edit' ? 'Edit Produk' : 'Tambah Produk'">
+<x-template :title="$mode === 'edit' ? 'Edit Product' : 'Add Product'">
 
-    <h2>{{ $mode === 'edit' ? 'Edit Produk' : 'Tambah Produk' }}</h2>
+    <h2>{{ $mode === 'edit' ? 'Edit Product' : 'Edit Product' }}</h2>
 
     {{--
         Action form menyesuaikan mode:
@@ -28,30 +28,30 @@
 
         {{-- Input nama produk --}}
         <div class="mb-3">
-            <label for="name" class="form-label">Nama Produk</label>
+            <label for="name" class="form-label">Product Name</label>
             <input type="text" name="name" id="name" class="form-control"
                    value="{{ isset($product) ? $product['name'] : '' }}" required>
         </div>
 
         {{-- Textarea deskripsi produk --}}
         <div class="mb-3">
-            <label for="description" class="form-label">Deskripsi</label>
+            <label for="description" class="form-label">Description</label>
             <textarea name="description" id="description" class="form-control"
                       required>{{ isset($product) ? $product['description'] : '' }}</textarea>
         </div>
 
         {{-- Input harga produk (tipe number) --}}
         <div class="mb-3">
-            <label for="price" class="form-label">Harga</label>
+            <label for="price" class="form-label">Price</label>
             <input type="number" name="price" id="price" class="form-control"
                    value="{{ isset($product) ? $product['price'] : '' }}" required>
         </div>
 
         {{-- Tombol submit dan batal --}}
         <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             {{-- Tombol batal kembali ke halaman daftar produk --}}
-            <a href="{{ route('products') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('products') }}" class="btn btn-secondary">Cancel</a>
         </div>
 
     </form>

@@ -6,11 +6,11 @@
     Variabel:
     - $products (array): daftar produk yang akan ditampilkan
 --}}
-<x-template title="Daftar Produk">
+<x-template title="Product List">
 
     {{-- Header halaman dan tombol tambah produk --}}
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>Daftar Produk</h2>
+        <h2>Product List</h2>
         {{-- Tombol Add new product mengarah ke route products.create --}}
         <a class="btn btn-primary" href="{{ route('products.create') }}">Add new product</a>
     </div>
@@ -28,7 +28,7 @@
 
                 {{-- Harga produk dengan format Rupiah --}}
                 <p class="card-text">
-                    <strong>Harga:</strong> Rp {{ number_format($product['price'], 0, ',', '.') }}
+                    <strong>Price:</strong> Rp {{ number_format($product['price'], 0, ',', '.') }}
                 </p>
 
                 {{-- Tombol Detail mengarah ke route products.show --}}
