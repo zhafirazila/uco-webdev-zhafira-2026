@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>{{ $title }}</title>
+    <title>{{ $title ?? 'Webdev' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -31,6 +31,17 @@
         </div>
     </nav>
 
+    <div class="container">
+        @if(session('success'))
+        <x-alert type="success">{{ session('success') }}</x-alert>
+        @endif
+
+        @error('alert')
+        <x-alert type="danger">{{ session('errors')->first('alert') }}</x-alert>
+        @enderror
+    </div>
+
     {{ $slot }}
+
 </body>
 </html>

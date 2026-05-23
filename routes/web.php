@@ -12,6 +12,10 @@ Route::controller(\App\Http\Controllers\ArticleController::class)->group(functio
     Route::match(['get', 'post'], '/articles/create', 'create')->name('article.create');
     // Route::get('/articles/create', 'create')->name('article.create'); jadi ini dihapus pakai yang diatas
     // Route::post('/articles/create', 'create'); jadi ini dihapus pakai yang diatas
+    Route::get('/articles/{slug}', 'single')->name('article.single');
+    Route::match(['get', 'post'], '/articles/{id}/edit', 'edit')->name('article.edit');
+    Route::post('/articles/{id}/delete', 'delete')->name('article.delete');
+
 });
 
 // (Ini yang sebelum dikelompokkan seperti diatas, kita pakai yang atas ya)
